@@ -1,16 +1,22 @@
 package com.example.android.loginscreen;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class SignUpTabFragment extends Fragment
 {
@@ -18,8 +24,7 @@ public class SignUpTabFragment extends Fragment
     Button signUpButton;
     float v=0;
 
-    FirebaseDatabase rootNode;
-    DatabaseReference reference;
+    FirebaseAuth fAuth;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -30,6 +35,7 @@ public class SignUpTabFragment extends Fragment
         pass = root.findViewById(R.id.password);
         confirm = root.findViewById(R.id.confirmPassword);
         signUpButton = root.findViewById(R.id.signUpButton);
+        fAuth = FirebaseAuth.getInstance();
 
         email.setTranslationX(800);
         mobile.setTranslationX(800);
@@ -49,13 +55,41 @@ public class SignUpTabFragment extends Fragment
         confirm.animate().translationX(0).alpha(1).setDuration(800).setStartDelay(300).start();
         signUpButton.animate().translationX(0).alpha(1).setDuration(800).setStartDelay(300).start();
 
+        if(fAuth.getCurrentUser()!=null) // if already logged in
+        {
+            startActivity(new Intent(getActivity(), MainActivity.class));
+        }
+
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                rootNode = FirebaseDatabase.getInstance();  // gets the rootNode that contains al the data
-                reference = rootNode.getReference("users");
+                String myEmail = email.getText().toString().trim();
+                String myPass = pass.getText().toString().trim();
 
-                reference.setValue("First Data Storage");
+                if(TextUtils.isEmpty(myEmail)){
+                    email.setError("Email is required");
+                    return;
+                }
+                if(TextUtils.isEmpty(myPass)){
+                    pass.setError("Password is required");
+                    return;
+                }
+
+                fAuth.createUserWithEmailAndPassword(myEmail, myPass)
+                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if(task.isSuccessful()){
+                                    Toast.makeText(getActivity(), "User Created", Toast.LENGTH_SHORT).show();
+                                     startActivity(new Intent(getActivity(), MainActivity.class));
+                                }
+                                else {
+                                    Toast.makeText(getActivity(), "Try again" +task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+
+                                }
+                            }
+                        });
+
             }
         });
 
