@@ -6,6 +6,21 @@
     android:layout_height="match_parent">
 
     <EditText
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Name"
+        android:id="@+id/nameSignUp"
+        app:layout_constraintBottom_toTopOf="@+id/emailSignUp"
+        android:background="@drawable/edit_text_bg"
+
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.692"
+        app:layout_constraintWidth_percent=".8" />
+
+    <EditText
         android:id="@+id/emailSignUp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
