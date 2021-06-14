@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "992411915707",
+    "project_id": "rudhira-e1251",
+    "storage_bucket": "rudhira-e1251.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:992411915707:android:028fe0594c7d9d08baa09e",
+        "android_client_info": {
+          "package_name": "com.example.rudhira"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "992411915707-vpau5au0cge9g4gcn3ot6la3gt62q7kn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.rudhira",
+            "certificate_hash": "98501dfcc73bb390927ccc64cf58ec8ec79f01f3"
+          }
+        },
+        {
+          "client_id": "992411915707-6th6g3ca5tij4brs0gq1js37m9o30b83.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbYAWVhlLGwmV-CvhURJxftNZZ4J8xmAo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "992411915707-6th6g3ca5tij4brs0gq1js37m9o30b83.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
