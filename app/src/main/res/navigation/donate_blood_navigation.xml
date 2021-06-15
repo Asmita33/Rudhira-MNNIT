@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/donate_blood_navigation"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/navigation_user_info"
+    >
+    <fragment
+        android:id="@+id/navigation_user_info"
+        android:name="com.example.rudhira.ui.fragments.donateBlood.donateBloodFragments.UserInfo"
+        android:label="@string/bottom_nav_user"
+        tools:layout="@layout/user_info_fragment" />
+    <fragment
+        android:id="@+id/navigation_user_documents"
+        android:name="com.example.rudhira.ui.fragments.donateBlood.donateBloodFragments.UserDocuments"
+        android:label="@string/bottom_nav_documents"
+        tools:layout="@layout/user_documents_fragment" />
+
+</navigation>

@@ -1,15 +1,15 @@
-package com.example.android.loginscreen;
+package com.example.rudhira.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.airbnb.lottie.LottieAnimationView;
+import com.example.android.loginscreen.R;
 
 import java.util.Timer;
 import java.util.TimerTask;

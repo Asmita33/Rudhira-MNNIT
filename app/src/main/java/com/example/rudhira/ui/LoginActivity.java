@@ -1,4 +1,4 @@
-package com.example.android.loginscreen;
+package com.example.rudhira.ui;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.android.loginscreen.R;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.rudhira.ui.fragments.home.Home"
+        android:label="@string/menu_home"
+        tools:layout="@layout/home_fragment" />
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.example.rudhira.ui.fragments.profile.Profile"
+        android:label="@string/menu_profile"
+        tools:layout="@layout/profile_fragment" />
+
+    <fragment
+        android:id="@+id/nav_requestBlood"
+        android:name="com.example.rudhira.ui.fragments.requestBlood.RequestBlood"
+        android:label="@string/menu_requestBlood"
+        tools:layout="@layout/request_blood_fragment" />
+
+    <fragment
+        android:id="@+id/nav_donateBlood"
+        android:name="com.example.rudhira.ui.fragments.donateBlood.DonateBlood"
+        android:label="@string/menu_donateBlood"
+        tools:layout="@layout/donate_blood_fragment" />
+
+    <fragment
+        android:id="@+id/nav_aboutUs"
+        android:name="com.example.rudhira.ui.fragments.aboutUs.AboutUs"
+        android:label="@string/menu_aboutUs"
+        tools:layout="@layout/about_us_fragment" />
+</navigation>
